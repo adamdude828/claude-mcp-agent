@@ -25,11 +25,11 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - Create first test placeholder
    
    **Acceptance Criteria:**
-   - [ ] `pytest` runs successfully
-   - [ ] Test coverage reporting is configured
-   - [ ] Common test fixtures are available
-   - [ ] Mock utilities for MCP servers are implemented
-   - [ ] CI runs tests automatically
+   - [x] `pytest` runs successfully
+   - [x] Test coverage reporting is configured
+   - [x] Common test fixtures are available
+   - [x] Mock utilities for MCP servers are implemented
+   - [x] CI runs tests automatically
 
 3. **Server Config Models**
    - Create ServerConfig Pydantic model
