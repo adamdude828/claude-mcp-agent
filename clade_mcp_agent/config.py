@@ -10,6 +10,14 @@ import sys
 
 class ServerConfig(BaseModel):
     """Configuration for a single MCP server instance."""
+    host: str = Field(
+        ...,
+        description="Hostname or IP address of the server"
+    )
+    port: int = Field(
+        default=8080,
+        description="Port number for the server"
+    )
     server_path: Path = Field(
         ...,
         description="Path to the server executable"
@@ -56,6 +64,14 @@ class ServerConfig(BaseModel):
             raise ValueError(f"Config file not found: {path}")
         elif path_field == "working_dir" and not path.exists():
             raise ValueError(f"Working directory does not exist: {path}")
+
+    @field_validator("port")
+    @classmethod
+    def validate_port(cls, v: int) -> int:
+        """Validate the port number."""
+        if not 1 <= v <= 65535:
+            raise ValueError("Port number must be between 1 and 65535")
+        return v
 
     @model_validator(mode='after')
     def validate_all(self) -> 'ServerConfig':
