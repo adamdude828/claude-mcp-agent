@@ -37,11 +37,11 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - Add environment variable handling
    
    **Acceptance Criteria:**
-   - [ ] ServerConfig validates all required fields
-   - [ ] Path validation ensures server files exist
-   - [ ] Environment variables are properly substituted
-   - [ ] Config can be serialized to/from JSON
-   - [ ] Invalid configs raise appropriate errors
+   - [x] ServerConfig validates all required fields
+   - [x] Path validation ensures server files exist
+   - [x] Environment variables are properly substituted
+   - [x] Config can be serialized to/from JSON
+   - [x] Invalid configs raise appropriate errors
 
 4. **Server Config Tests**
    - Test ServerConfig validation
@@ -49,11 +49,11 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - Test config serialization/deserialization
    
    **Acceptance Criteria:**
-   - [ ] 100% test coverage of ServerConfig model
-   - [ ] All validation rules are tested
-   - [ ] Environment variable substitution is tested
-   - [ ] Serialization/deserialization is tested
-   - [ ] Error cases are tested
+   - [x] 100% test coverage of ServerConfig model
+   - [x] All validation rules are tested
+   - [x] Environment variable substitution is tested
+   - [x] Serialization/deserialization is tested
+   - [x] Error cases are tested
 
 5. **Config File Handler**
    - Implement JSON config file loading
