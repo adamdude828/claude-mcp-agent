@@ -88,11 +88,11 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - Create config merging logic
    
    **Acceptance Criteria:**
-   - [ ] Successfully loads JSON config from file
-   - [ ] Handles missing/malformed config files gracefully
-   - [ ] Substitutes environment variables in config
-   - [ ] Merges multiple config sources correctly
-   - [ ] Validates final config structure
+   - [x] Successfully loads JSON config from file
+   - [x] Handles missing/malformed config files gracefully
+   - [x] Substitutes environment variables in config
+   - [x] Merges multiple config sources correctly
+   - [x] Validates final config structure
 
 6. **Config File Handler Tests**
    - Test JSON loading/parsing
@@ -100,11 +100,11 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - Test config merging scenarios
    
    **Acceptance Criteria:**
-   - [ ] 100% test coverage of config file handler
-   - [ ] Tests for missing/invalid files
-   - [ ] Tests for environment variable resolution
-   - [ ] Tests for config merging scenarios
-   - [ ] Tests for validation failures
+   - [x] 100% test coverage of config file handler
+   - [x] Tests for missing/invalid files
+   - [x] Tests for environment variable resolution
+   - [x] Tests for config merging scenarios
+   - [x] Tests for validation failures
 
 7. **Base State Models**
    - Create base state interface
@@ -112,11 +112,11 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - Add state serialization methods
    
    **Acceptance Criteria:**
-   - [ ] Base state interface is well-defined
-   - [ ] State validation handles all required fields
-   - [ ] Serialization maintains data integrity
-   - [ ] Custom state types can be easily created
-   - [ ] State history is properly tracked
+   - [x] Base state interface is well-defined
+   - [x] State validation handles all required fields
+   - [x] Serialization maintains data integrity
+   - [x] Custom state types can be easily created
+   - [x] State history is properly tracked
 
 8. **State Management Tests**
    - Test state validation
