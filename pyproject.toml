@@ -25,3 +25,15 @@ pytest-cov = "^4.1.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "8.0.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+source = ["clade_mcp_agent"]
+
+[tool.coverage.report]
+show_missing = true
