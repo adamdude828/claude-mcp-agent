@@ -1,0 +1,62 @@
+# Task Workflow Rules
+
+For each task in the roadmap, follow these steps precisely:
+
+### 1. Branch Check
+Before starting any work, verify we're on the master branch:
+```bash
+git branch --show-current
+```
+If not on master, STOP and notify the user to switch to master first.
+
+### 2. Feature Branch Creation
+Create a feature branch following the format:
+```bash
+git checkout -b feature/phase-{phase_num}-step-{step_num}-{brief-description}
+```
+Example: `feature/phase-1-step-2-test-infrastructure`
+
+### 3. Implementation
+Make the necessary code changes according to the task requirements.
+
+### 4. Commit and Push
+Stage, commit, and push changes:
+```bash
+git add .
+git commit -m "Phase {phase_num}, Step {step_num}: {description}"
+git push -u origin {branch_name}
+```
+
+### 5. Create Pull Request
+Use GitHub CLI to create PR non-interactively:
+```bash
+gh pr create --title "Phase {phase_num}, Step {step_num}: {description}" --body "Implements Phase {phase_num}, Step {step_num} from roadmap." --base main --head {branch_name} --fill
+```
+
+### 6. CI Monitoring
+After PR creation, offer to monitor CI checks:
+```bash
+gh pr checks {pr_number} --watch
+```
+
+### Example Workflow
+```bash
+# 1. Check branch
+git branch --show-current  # Should be 'main'
+
+# 2. Create feature branch
+git checkout -b feature/phase-1-step-2-test-infrastructure
+
+# 3. Make changes...
+
+# 4. Commit and push
+git add .
+git commit -m "Phase 1, Step 2: Test infrastructure setup"
+git push -u origin feature/phase-1-step-2-test-infrastructure
+
+# 5. Create PR
+gh pr create --title "Phase 1, Step 2: Test infrastructure setup" --body "Implements Phase 1, Step 2 from roadmap." --base main --head feature/phase-1-step-2-test-infrastructure --fill
+
+# 6. Monitor CI
+gh pr checks {pr_number} --watch
+``` 
