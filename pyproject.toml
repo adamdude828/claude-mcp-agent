@@ -7,12 +7,13 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-anthropic = "^0.7.7"
+anthropic = "^0.7.8"
 aiohttp = "^3.9.1"
-pydantic = "^2.5.3"
-python-dotenv = "^1.0.0"
+pydantic = "^2.10.5"
+python-dotenv = "^1.0.1"
 asyncio = "^3.4.3"
-structlog = "^24.1.0"
+structlog = "^24.4.0"
+pydantic-settings = "^2.7.1"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.0.0"
