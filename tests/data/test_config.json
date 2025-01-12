@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "test_server": {
+            "path": "/path/to/test_server.py",
+            "enabled": true,
+            "env_vars": {
+                "TEST_VAR": "${TEST_ENV_VAR}",
+                "REGION": "test-region"
+            }
+        }
+    }
+} 
