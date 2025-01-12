@@ -1,41 +1,39 @@
-"""Entry point for running the agent."""
-
+"""Main entry point for the Claude MCP Agent."""
 import asyncio
+import logging
 
-import structlog
+from .agent import MCPAgent
+from .claude_client import ClaudeClient
+from .mcp_client import MCPClient
 
-from .agent import CladeAgent
-from .config import settings
 
-
-# Configure structured logging
-structlog.configure(
-    processors=[
-        structlog.processors.TimeStamper(fmt="iso"),
-        structlog.processors.JSONRenderer(),
-    ]
-)
-
-logger = structlog.get_logger()
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 async def main():
-    """Main entry point for the agent.
-
-    Initializes and runs the Clade agent, handling graceful shutdown on interrupt.
-    """
-    agent = CladeAgent()
+    """Run the MCP agent with Claude integration."""
+    # Initialize clients
+    claude_client = ClaudeClient(api_key='your-api-key')  # Will be configured via env later
+    mcp_client = MCPClient()
+    
+    # Initialize agent
+    agent = MCPAgent(claude_client=claude_client, mcp_client=mcp_client)
     
     try:
+        logger.info('Starting MCP agent...')
         await agent.start()
+        
         # Keep the agent running
         while True:
             await asyncio.sleep(1)
+            
     except KeyboardInterrupt:
-        logger.info("Received shutdown signal")
+        logger.info('Shutting down MCP agent...')
     finally:
         await agent.stop()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     asyncio.run(main())

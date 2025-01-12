@@ -1,5 +1,4 @@
 """Main agent implementation coordinating Claude and MCP servers."""
-import asyncio
 import structlog
 from typing import List, Dict
 from .config import settings
