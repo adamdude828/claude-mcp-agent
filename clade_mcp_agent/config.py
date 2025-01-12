@@ -37,8 +37,17 @@ class ServerConfig(BaseModel):
 
     model_config = ConfigDict(
         validate_default=True,
-        extra="ignore"
+        extra="ignore",
+        arbitrary_types_allowed=True
     )
+
+    @field_validator("port")
+    @classmethod
+    def validate_port(cls, v: int) -> int:
+        """Validate the port number."""
+        if not 1 <= v <= 65535:
+            raise ValueError("Port number must be between 1 and 65535")
+        return v
 
     def _validate_path(self, path_field: str) -> None:
         """Validate a path field."""
@@ -65,17 +74,9 @@ class ServerConfig(BaseModel):
         elif path_field == "working_dir" and not path.exists():
             raise ValueError(f"Working directory does not exist: {path}")
 
-    @field_validator("port")
-    @classmethod
-    def validate_port(cls, v: int) -> int:
-        """Validate the port number."""
-        if not 1 <= v <= 65535:
-            raise ValueError("Port number must be between 1 and 65535")
-        return v
-
     @model_validator(mode='after')
-    def validate_all(self) -> 'ServerConfig':
-        """Validate all fields after initial validation."""
+    def validate_paths(self) -> 'ServerConfig':
+        """Validate all path fields after initial validation."""
         for path_field in ['server_path', 'config_path', 'working_dir']:
             self._validate_path(path_field)
         return self
