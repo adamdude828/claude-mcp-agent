@@ -7,7 +7,7 @@ from clade_mcp_agent.config import ServerConfig, Settings
 def setup_test_env(monkeypatch):
     """Setup test environment variables."""
     monkeypatch.setenv("CLAUDE_API_KEY", "test_key")
-    monkeypatch.setenv("MCP_SERVERS", '["server1", "server2"]')  # Just server identifiers
+    monkeypatch.setenv("MCP_SERVERS", '["server1:8080", "server2:8080"]')  # Include port numbers
     monkeypatch.setenv("LOG_LEVEL", "DEBUG")
 
 @pytest.fixture
