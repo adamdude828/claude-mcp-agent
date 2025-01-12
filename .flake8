@@ -1,19 +1,6 @@
 [flake8]
 max-line-length = 120
 max-complexity = 10
-extend-ignore = 
-    D100,  # Missing docstring in public module
-    D104,  # Missing docstring in public package
-    D105,  # Missing docstring in magic method
-    D107,  # Missing docstring in __init__
-    E203,  # Whitespace before ':'
-    W503,  # Line break before binary operator
-    W291,  # Trailing whitespace
-    W293,  # Blank line contains whitespace
-    Q000   # Double quotes found but single quotes preferred
+extend-ignore = D100,D104,D105,D107,E203,W503,W291,W293,Q000
 docstring-convention = google
-exclude = 
-    .git,
-    __pycache__,
-    build,
-    dist 
+exclude = .git,__pycache__,build,dist 
