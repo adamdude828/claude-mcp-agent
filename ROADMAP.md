@@ -55,6 +55,33 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - [x] Serialization/deserialization is tested
    - [x] Error cases are tested
 
+4a. **Logging Infrastructure**
+   - Setup structured logging with JSON format
+   - Add log rotation and file handling
+   - Create logging configuration
+   - Implement context-aware logging
+   
+   **Acceptance Criteria:**
+   - [ ] Structured JSON logging is configured
+   - [ ] Log rotation and file management works
+   - [ ] Log levels are properly configured from settings
+   - [ ] Context (server ID, request ID) is included in logs
+   - [ ] Logs can be easily parsed and analyzed
+   - [ ] Test mode logging is configured
+
+4b. **Logging Tests**
+   - Test log configuration
+   - Test structured output format
+   - Test context propagation
+   - Test file rotation
+   
+   **Acceptance Criteria:**
+   - [ ] Log configuration is properly tested
+   - [ ] JSON output format is verified
+   - [ ] Context fields are properly included
+   - [ ] File rotation works as expected
+   - [ ] Test mode logging is verified
+
 5. **Config File Handler**
    - Implement JSON config file loading
    - Add environment variable substitution
