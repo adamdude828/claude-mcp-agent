@@ -1,11 +1,11 @@
 """Main agent implementation coordinating Claude and MCP servers."""
-import structlog
 from typing import List, Dict
 from .config import settings
 from .claude_client import ClaudeClient
 from .mcp_client import MCPClient
+from .logging import get_logger
 
-logger = structlog.get_logger()
+logger = get_logger(__name__)
 
 class CladeAgent:
     """Agent that coordinates between Claude and MCP servers."""

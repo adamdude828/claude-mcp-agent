@@ -121,4 +121,5 @@ def get_logger(name: str) -> structlog.BoundLogger:
     Returns:
         A configured structlog logger instance.
     """
-    return structlog.get_logger(name) 
+    logger = structlog.get_logger(name)
+    return logger 

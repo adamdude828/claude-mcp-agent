@@ -182,5 +182,5 @@ def test_settings_from_env():
     """Test loading settings from environment variables."""
     settings = Settings()
     assert settings.claude_api_key == "test_key"
-    assert settings.mcp_servers == ["server1", "server2"]
+    assert settings.mcp_servers == ["server1:8080", "server2:8080"]
     assert settings.log_level == "DEBUG" 
