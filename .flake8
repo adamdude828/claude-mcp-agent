@@ -1,0 +1,16 @@
+[flake8]
+max-line-length = 120
+max-complexity = 10
+extend-ignore = 
+    D100  # Missing docstring in public module
+    D104  # Missing docstring in public package
+    D105  # Missing docstring in magic method
+    D107  # Missing docstring in __init__
+    E203  # Whitespace before ':'
+    W503  # Line break before binary operator
+docstring-convention = google
+exclude = 
+    .git,
+    __pycache__,
+    build,
+    dist 
