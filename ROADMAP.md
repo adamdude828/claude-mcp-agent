@@ -62,12 +62,12 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - Implement context-aware logging
    
    **Acceptance Criteria:**
-   - [ ] Structured JSON logging is configured
-   - [ ] Log rotation and file management works
-   - [ ] Log levels are properly configured from settings
-   - [ ] Context (server ID, request ID) is included in logs
-   - [ ] Logs can be easily parsed and analyzed
-   - [ ] Test mode logging is configured
+   - [x] Structured JSON logging is configured
+   - [x] Log rotation and file management works
+   - [x] Log levels are properly configured from settings
+   - [x] Context (server ID, request ID) is included in logs
+   - [x] Logs can be easily parsed and analyzed
+   - [x] Test mode logging is configured
 
 4b. **Logging Tests**
    - Test log configuration
@@ -76,11 +76,11 @@ Each task is designed to be completable in one session (~100 lines of code). Tes
    - Test file rotation
    
    **Acceptance Criteria:**
-   - [ ] Log configuration is properly tested
-   - [ ] JSON output format is verified
-   - [ ] Context fields are properly included
-   - [ ] File rotation works as expected
-   - [ ] Test mode logging is verified
+   - [x] Log configuration is properly tested
+   - [x] JSON output format is verified
+   - [x] Context fields are properly included
+   - [x] File rotation works as expected
+   - [x] Test mode logging is verified
 
 5. **Config File Handler**
    - Implement JSON config file loading
